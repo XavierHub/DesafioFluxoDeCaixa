@@ -51,7 +51,7 @@ Utilizamos Inversion of Control e DDD para temos os seguintes benefícios:
 
 ![Screenshots](arquiteturaEmCamadas.PNG) <br><br>
 
-Utilizamos a micro ORM dapper ao invés do EntityFramework pois o dapper é será mais performático no cenário de pico de 500 inclusões por segundo.
+Utilizamos a micro ORM dapper ao invés do EntityFramework pois o dapper é performático no cenário de pico de 500 inclusões por segundo.
 
 Criamos uma aplicação WebMvc para o cliente fazer os lançamentos de crédito e débito e duas WebApi uma para os lançamento e outra para relatório
 Assim caso ocorra alguma indisponibilidade na api do relatório o sistema de lançamentos continuará funcionando.
