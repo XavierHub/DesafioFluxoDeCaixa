@@ -90,7 +90,7 @@ namespace CashFlowReportApiTests.Controllers
         public async Task WhenRunIndexWithParameters_ShouldReturnViewWithViewBagData()
         {
             var viewModel = new CashFlowEntryReportViewModel { Data= DateTime.Now  };
-            var payload = await _reportController.Index(viewModel);
+            var payload = await _reportController.Search(viewModel);
             var result = Assert.IsType<ViewResult>(payload);
             var CashFlowsReferences = Assert.IsAssignableFrom<List<SelectListItem>>(result.ViewData["CashFlowsReferences"]);
             var cashFlows = Assert.IsAssignableFrom<List<CashFlowEntryReportViewModel>>(result.ViewData["CashFlowsReport"]);
