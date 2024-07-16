@@ -24,9 +24,9 @@ BEGIN
         WHERE cf.[CreatedOn] BETWEEN @StartDate AND @EndDate
       )
       SELECT 
-              ISNULL([Debit], 0)                      AS [Debit], 
-              ISNULL([Credit],0)                      AS [Credit] ,
-              ISNULL([Debit], 0) + ISNULL([Credit],0) AS [Total]
+              ISNULL([Debit], 0)                       AS [Debit], 
+              ISNULL([Credit], 0)                      AS [Credit] ,
+              ISNULL([Debit], 0) + ISNULL([Credit],0)  AS [Total]
         FROM CashFlow_cte
        PIVOT (
                SUM([Amount])

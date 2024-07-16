@@ -18,11 +18,6 @@ namespace EmpXpo.Accounting.CashFlowApi
             builder.Services.AddEndpointsApiExplorer()
                             .AddSwaggerGen()
                             .AddContainerIoc(builder.Configuration)
-                            //.AddApplication()
-                            //.AddRepository(options =>
-                            //{
-                            //    options.ConnectionString = builder.Configuration?.GetValue<string>("ConnectionStrings:cnSqlCacheFlow") ?? "";
-                            //})
                             .AddControllers()
                             .AddJsonOptions(options =>
                                             options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
