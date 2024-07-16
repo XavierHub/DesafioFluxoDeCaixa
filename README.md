@@ -32,7 +32,8 @@ A solução foi organizada em pastas conforme a figura abaixo.
 - "00 WebApp" está a aplicação principal feita em Asp.Net MVC aonde o cliente poderá fazer o lançamento de credito e debito e visualizar o relatório consolidado do dia
 - "01 WebApi" estão a Apis que disponibiliza as informações do fluxo de caixa utilizado no projeto MVC.
 - "02 Domain", "03 Application", 04 Repository", "05 IoC" são as camadas da aplicação utilizados nos projetos MVC e WebApi
-- "06 Database" está o projeto de banco de dados. Com este projeto é possível ver facilmente ver as ultimas alterações, comparar os objetos do banco de dados, gerar scripts para alteração e caso necessário fazer updates 
+- "06 Database" está o projeto de banco de dados.
+   Com este projeto é possível ver facilmente ver as ultimas alterações, comparar os objetos do banco de dados, gerar scripts para alteração e caso necessário fazer updates 
 
 ![Screenshots](dbCompare.PNG) <br><br>
 
@@ -60,15 +61,15 @@ No sistema de relatório criamos duas procedures para melhorar a performance do 
 
 ## Execução da aplicação
 Para executar o projeto segui as seguintes etapas
-1) Abra o "Sql Server Management Studio" e crie uma nova consulta em branco
-   Dentro entre na pasta "src\EmpXpo.Accounting.Database\Scripts"
+1) Abra o "Sql Server Management Studio" e crie uma nova consulta em branco   
+   Entre na pasta "src\EmpXpo.Accounting.Database\Scripts"
    Utilize o arquivo "banco.sql" para criar o banco de dados, tabelas e procedure
 
-2) Pegue a string de conexão para o banco "DbCashFlow" criado anteriomente
+3) Pegue a string de conexão para o banco "DbCashFlow" criado anteriormente pelo script
 
-3) Abra a solução src/EmpXpo.Accounting.sln com o Visual Studio
+4) Abra a solução src/EmpXpo.Accounting.sln com o Visual Studio
 
-4) Dentro do "Visual Studio" entre nos projetos "01 WebApi/EmpXpo.Accounting.CashFlowApi" e "01 WebApi\EmpXpo.Accounting.CashFlowReportApi"
+5) Dentro do "Visual Studio" entre nos projetos "01 WebApi/EmpXpo.Accounting.CashFlowApi" e "01 WebApi\EmpXpo.Accounting.CashFlowReportApi"   
    Altere a ConnectionStrings que está no arquivo appsettings.Development.json para ConnectionStrings da sua maquina
    
    ```
@@ -77,7 +78,7 @@ Para executar o projeto segui as seguintes etapas
 	}
    ```
 
-5) Caso a aplicação "00 WebApp/EmpXpo.Accounting.WebApp" não encontre o endereço das Apis
+7) Caso a aplicação "00 WebApp/EmpXpo.Accounting.WebApp" não encontre o endereço das Apis
 
    Verifique o enereço de execução dos projetos "01 WebApi/EmpXpo.Accounting.CashFlowApi" e "01 WebApi\EmpXpo.Accounting.CashFlowReportApi"
    no arquivo "Properties/launchSettings.json"
@@ -91,7 +92,7 @@ Para executar o projeto segui as seguintes etapas
 	"cnCashFlowApi": "https://localhost:7162/CashFlow",
    ```
    
-7) Ajuste o "Startup Projects" do Visual Studio conforme a figura abaixo:
+8) Ajuste o "Startup Projects" do Visual Studio conforme a figura abaixo:
     A aplicação MVC deve  iniciar após as WebApis
 
     ![Screenshots](startupProjects.png) <br><br>
