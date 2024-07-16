@@ -18,10 +18,11 @@ Desenvolvimento de uma aplicação para controle de Fluxo de Caixa.
 
 ## Padrões de Design
 - Domain Driven Design(DDD)
-- Unit Of Work (com Dapper)
 - Inversion of Control (IoC ou inversão de controle)
 - Model-View-ViewModel (MVVM)
-- Repository Pattern
+- Repository Pattern (com Dapper)
+- [Options pattern](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0)
+- [Chain of Responsibility (.Net8 Middleware)](https://learn.microsoft.com/pt-br/aspnet/core/fundamentals/middleware/?view=aspnetcore-8.0)
 
 ## Solução
 A solução foi organizada em pastas conforme a figura abaixo.
@@ -49,7 +50,7 @@ Utilizamos Inversion of Control e DDD para temos os seguintes benefícios:
 
 ![Screenshots](arquiteturaEmCamadas.PNG) <br><br>
 
-Utilizamos a micro ORM dapper ao invés do EntityFramework pois o dapper é será mais performatico no cenário de pico de 500 inclusões por segundo.
+Utilizamos a micro ORM dapper ao invés do EntityFramework pois o dapper é será mais performático no cenário de pico de 500 inclusões por segundo.
 
 Criamos uma aplicação WebMvc para o cliente fazer os lançamentos de crédito e débito e duas WebApi uma para os lançamento e outra para relatório
 Assim caso ocorra alguma indisponibilidade na api do relatório o sistema de lançamentos continuará funcionando.
@@ -77,9 +78,11 @@ Para executar o projeto segui as seguintes etapas
    ```
 
 5) Caso a aplicação "00 WebApp/EmpXpo.Accounting.WebApp" não encontre o endereço das Apis
+
    Verifique o enereço de execução dos projetos "01 WebApi/EmpXpo.Accounting.CashFlowApi" e "01 WebApi\EmpXpo.Accounting.CashFlowReportApi"
    no arquivo "Properties/launchSettings.json"
-   coloque esse novo endereço no projeto "00 WebApp/EmpXpo.Accounting.WebApp"
+
+   Coloque esse novo endereço no projeto "00 WebApp/EmpXpo.Accounting.WebApp"
    no arquivo "appsettings.Development.json"
    
    
@@ -88,7 +91,7 @@ Para executar o projeto segui as seguintes etapas
 	"cnCashFlowApi": "https://localhost:7162/CashFlow",
    ```
    
-6) Ajuste o "Startup Projects" do Visual Studio conforme a figura abaixo:
+7) Ajuste o "Startup Projects" do Visual Studio conforme a figura abaixo:
     A aplicação MVC deve  iniciar após as WebApis
 
     ![Screenshots](startupProjects.png) <br><br>
@@ -99,6 +102,7 @@ O sistema em execução no ambiente de Dev deve parecer conforme as imagens abai
   
 ## Testes
 Para executar os testes de unidade dentro do Visual Studio acesse a pasta "07 Tests/CashFlowTests"
+
 Clique com o botão direito no projeto "CashFlowTests" click em "Run Tests"
 
 ![Screenshots](runTests.png) <br><br>
