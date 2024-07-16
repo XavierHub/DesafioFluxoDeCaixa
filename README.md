@@ -56,7 +56,7 @@ Utilizamos a micro ORM dapper ao invés do EntityFramework pois o dapper é ser�
 Criamos uma aplicação WebMvc para o cliente fazer os lançamentos de crédito e débito e duas WebApi uma para os lançamento e outra para relatório
 Assim caso ocorra alguma indisponibilidade na api do relatório o sistema de lançamentos continuará funcionando.
 
-No sistema de relatório criamos duas procedures para melhorar a performance do do banco de dados e um indice ('Ind_CashFlow_1') na tabela 'CashFlow' coluna 'CreatedOn'
+No sistema de relatório criamos duas procedures para melhorar a performance do banco de dados e um indice ('Ind_CashFlow_1') na tabela 'CashFlow' coluna 'CreatedOn'
 
 
 ## Execução da aplicação
