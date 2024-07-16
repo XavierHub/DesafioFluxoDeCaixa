@@ -15,6 +15,7 @@ Desenvolvimento de uma aplicação para controle de Fluxo de Caixa.
 - Dapper
 - Sql Server / Sql Server Management Studio
 - FluentValidation
+- RESTful
 
 ## Padrões de Design
 - Domain Driven Design(DDD)
