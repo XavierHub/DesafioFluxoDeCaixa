@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\ModelingProject\DependencyValidation1.layerdiagram" Link="DependencyValidation1.layerdiagram">
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmpXpo.Accounting.Application\EmpXpo.Accounting.Application.csproj" />
+    <ProjectReference Include="..\EmpXpo.Accounting.Domain\EmpXpo.Accounting.Domain.csproj" />
+    <ProjectReference Include="..\EmpXpo.Accounting.Repository\EmpXpo.Accounting.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

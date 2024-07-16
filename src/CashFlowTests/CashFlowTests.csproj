@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\ModelingProject\DependencyValidation1.layerdiagram" Link="DependencyValidation1.layerdiagram">
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="xunit" Version="2.5.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmpXpo.Accounting.Application\EmpXpo.Accounting.Application.csproj" />
+    <ProjectReference Include="..\EmpXpo.Accounting.CashFlowApi\EmpXpo.Accounting.CashFlowApi.csproj" />
+    <ProjectReference Include="..\EmpXpo.Accounting.CashFlowReportApi\EmpXpo.Accounting.CashFlowReportApi.csproj" />        
+    <ProjectReference Include="..\EmpXpo.Accounting.Domain\EmpXpo.Accounting.Domain.csproj" />
+    <ProjectReference Include="..\EmpXpo.Accounting.Repository\EmpXpo.Accounting.Repository.csproj" />
+    <ProjectReference Include="..\EmpXpo.Accounting.WebApp\EmpXpo.Accounting.WebApp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

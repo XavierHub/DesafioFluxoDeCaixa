@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e79c4913-4bd6-4ee5-9b86-28a937455aaa" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="ae2eb8df-4914-4249-97b6-7783d06fd8d3" name="EmpXpo.Accounting.Domain">
+      <references>
+        <reference Id="ecedd68e-e756-496b-a672-1c806b945139" name="EmpXpo.Accounting.Domain">
+          <ArtifactNode Label="EmpXpo.Accounting.Domain" Category="CodeSchema_Project" Id="(Assembly=../EmpXpo.Accounting.Domain/EmpXpo.Accounting.Domain.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="7c02e51e-e352-44e6-bf5b-296970166b2f" name="EmpXpo.Accounting.Application">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="85cc8bcf-0486-46fc-b231-c34d18844ea7" direction="Forward">
+          <layerMoniker Id="ae2eb8df-4914-4249-97b6-7783d06fd8d3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="78875dec-3d2d-409d-b2e0-48e47a9a2909" direction="Forward">
+          <layerMoniker Id="396c1591-f31b-405a-889a-19bf7725926d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="501431bf-0648-4f61-b45c-91b73f6b0761" name="EmpXpo.Accounting.Application">
+          <ArtifactNode Label="EmpXpo.Accounting.Application" Category="CodeSchema_Project" Id="(Assembly=../EmpXpo.Accounting.Application/EmpXpo.Accounting.Application.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="396c1591-f31b-405a-889a-19bf7725926d" name="EmpXpo.Accounting.Repository">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c1e559ab-4ea2-4f79-b22e-660ece5788f3" direction="Forward">
+          <layerMoniker Id="ae2eb8df-4914-4249-97b6-7783d06fd8d3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="a0ef1a8c-559b-47b6-9399-3c952c77b755" name="EmpXpo.Accounting.Repository">
+          <ArtifactNode Label="EmpXpo.Accounting.Repository" Category="CodeSchema_Project" Id="(Assembly=../EmpXpo.Accounting.Repository/EmpXpo.Accounting.Repository.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="23fca958-60cc-4c71-84c5-d7d6b5ef0983" name="EmpXpo.Accounting.Ioc">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="47461e6c-4253-465d-aca6-6d110a5cb63e" direction="Forward">
+          <layerMoniker Id="7c02e51e-e352-44e6-bf5b-296970166b2f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d8250661-39bc-4f50-b006-b684664854a5" direction="Forward">
+          <layerMoniker Id="ae2eb8df-4914-4249-97b6-7783d06fd8d3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="50e0d124-8f71-4234-9528-56a806f33642" direction="Forward">
+          <layerMoniker Id="396c1591-f31b-405a-889a-19bf7725926d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="1e46f714-e5e3-4856-9fbd-6587aee8f78e" name="EmpXpo.Accounting.Ioc">
+          <ArtifactNode Label="EmpXpo.Accounting.Ioc" Category="CodeSchema_Project" Id="(Assembly=../EmpXpo.Accounting.Ioc/EmpXpo.Accounting.Ioc.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>
