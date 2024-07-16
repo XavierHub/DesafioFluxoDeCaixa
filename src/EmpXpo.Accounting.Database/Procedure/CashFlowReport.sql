@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[CashFlowReport](   
+CREATE PROCEDURE [dbo].[CashFlowReport](   
    @StartDate     SMALLDATETIME,
    @EndDate       SMALLDATETIME
 )
@@ -9,7 +9,7 @@ BEGIN
       /* Ex.:
             Procedure que retorna o valor de debito e credito de acordo com ranger das datas especificadas
 
-            EXEC [dbo].[CashFlowReport] @StartDate='20240713', @EndDate = '20240715';
+            EXEC [dbo].[CashFlowReport] @StartDate='20240716', @EndDate = '20240717';
             EXEC [dbo].[CashFlowReport] @StartDate='20240701', @EndDate = '20240801';
       */      
       
@@ -24,9 +24,9 @@ BEGIN
         WHERE cf.[CreatedOn] BETWEEN @StartDate AND @EndDate
       )
       SELECT 
-              [Debit], 
-              [Credit],
-              [Debit] + [Credit] AS Total
+              ISNULL([Debit], 0)                      AS [Debit], 
+              ISNULL([Credit],0)                      AS [Credit] ,
+              ISNULL([Debit], 0) + ISNULL([Credit],0) AS [Total]
         FROM CashFlow_cte
        PIVOT (
                SUM([Amount])
@@ -35,8 +35,3 @@ BEGIN
 
     SET NOCOUNT OFF;
 END
-
-
-
-
-
